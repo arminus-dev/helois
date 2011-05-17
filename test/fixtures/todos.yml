@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  expected_duration: 1.5
+  due_date: 2011-05-13 13:51:04
+  completed: false
+
+two:
+  title: MyString
+  expected_duration: 1.5
+  due_date: 2011-05-13 13:51:04
+  completed: false

@@ -1,0 +1,5 @@
+div#nav{float: right;}
+div.pagination{float: left;}
+div#main{width: 80%;margin-left: 100px;}
+.mystrike span{text-decoration: line-through;}
+table#myTable{text-align: center;}

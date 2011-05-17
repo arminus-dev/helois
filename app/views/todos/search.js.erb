@@ -1,0 +1,3 @@
+jQuery("#listing").html("<%= escape_javascript(render(:partial => "list_todos"))%>");
+jQuery("#summary_count").html(<%= @unfinished_todos.count %>);
+jQuery("#summary_hour").html(<%= @unfinished_todos.sum('expected_duration') %>);

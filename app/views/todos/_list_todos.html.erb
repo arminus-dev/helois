@@ -1,0 +1,31 @@
+<table id="myTable" class="tablesorter">
+  <thead> 
+    <tr>
+      <th>Title</th>
+      <th>Expected duration</th>
+      <th>Due date</th>
+      <th>Completed</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @todos.each do |todo| %>
+      <tr class="<%= 'mystrike' if todo.completed %>" title="<%= todo.id %>">
+        <td><span><%= todo.title %></span></td>
+        <td><span><%= todo.expected_duration %></span></td>
+        <td><span><%= todo.due_date.to_formatted_s(:pretty) if !todo.due_date.blank? %></span></td>
+        <td><%= check_box_tag :todo_status, 'yes',todo.completed %></td>
+        <td class="not_strike" style="text-decoration: none;"><%= link_to 'Edit', edit_todo_path(todo) %></td>
+        <td class="not_strike"><%= (link_to 'Destroy', todo, :confirm => 'Are you sure?', :method => :delete) if todo.completed %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @todos %>
+
+<script type="text/javascript">
+  jQuery(function() {		
+    jQuery("#myTable").tablesorter({sortList:[[0,0]], widgets: ['zebra']});
+  });	
+</script>

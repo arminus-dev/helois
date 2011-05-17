@@ -1,0 +1,12 @@
+<div id="main">
+  <p id="notice"><%= notice %></p>
+  <h1>Listing Todos</h1>
+
+  <%= text_field_tag :search_query %><span id="loading" style="display: none;"><%=  image_tag("loading.gif")%></span>
+  <b id="summary_count"><%= @unfinished_todos.count %></b> Todos are unfinished and need <b id="summary_hour"><%= @unfinished_todos.sum('expected_duration') %></b> hours to finish them
+  <div id="listing">
+    <%= render :partial=>'list_todos' %>
+  </div>
+  <br />
+</div>
+<%= link_to 'New Todo', new_todo_path %>
